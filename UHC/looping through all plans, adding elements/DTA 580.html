@@ -1,0 +1,47 @@
+// DTA - 580
+// https://experience.adobe.com/#/@uhc/target/activities/activitydetails/A-B/uhc_m_r_xx_ms_vppcondenseplancardheadersonmobiledevices
+
+
+<style>
+  @media (max-width: 800px) and (orientation: landscape), only screen and (max-width: 481px){
+    .plan-name-container {
+    min-height: 100px !important;
+    }
+    
+    #is_cq_widget .heading-og {
+    font-size: 10px!important;
+}
+}
+    #is_cq_widget .med-supp-plans h3 {
+    font-family: "UHCSans",sans-serif !important;
+    line-height: normal;
+    font-size: 15px !important;
+    font-weight: bold;
+}
+
+</style>
+
+<script>
+
+var $all_MA_plans = document.querySelector("div.swiper-wrapper")
+var $model_plans = $($all_MA_plans).find("div.uhc-card__header")
+var $sec_head = $($model_plans).find("h3.heading-6")
+
+
+setInterval(() => {
+
+$($model_plans).each(function (i, $model_plan) {
+  
+    var $sec_head_text = $sec_head[i].innerHTML;
+    var $sec_head_new_val = '<h3 class="flex-1 mb-10 mb-lg-0 text-white"> '+$sec_head_text+' </h3>'
+    $model_plans[i].style.minHeight = 'inherit';
+    // $sec_head[i].classList.remove('font-size-18');
+    // $sec_head[i].classList.remove('heading-6');
+    $sec_head[i].outerHTML = $sec_head_new_val;
+    $sec_head[i].style.fontSize = "11px!important";
+    // count = count+1
+  
+});
+
+}, 200); 
+</script>

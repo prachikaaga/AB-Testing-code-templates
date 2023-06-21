@@ -1,0 +1,105 @@
+// DTA - 588
+// https://optimize.google.com/optimize/home/?authuser=0&hl=en-US#/accounts/4704075612/containers/14842397/experiments/82
+
+<style>
+.category-image img {
+    border-radius: 1rem 1rem 0 0;
+    max-width: 40%;
+}
+.og_format{
+    margin-left: 45%;
+}
+.tmp-menu-landing .action-list a {
+    color: #1c2529;
+    font-size: 1.5rem;
+}
+.full .category-action {
+    margin-left: none;
+}
+  .tmp-menu-landing .action-list {
+    background-color: rgba(215,210,203,.3);
+    column-count: 1;
+    column-gap: normal;
+    margin: 0 0 -0.2rem;
+    padding: 1rem 1rem 1rem;
+    position: relative;
+    width: 100%;
+}
+  
+@media screen and (max-device-width: 480px), (max-width: 690px){
+.tmp-menu-landing .category-headline, .tmp-home .category-headline {
+    margin-bottom: 0;
+    padding: 0;
+    text-align: right;
+    font-size: 1.5rem !important;
+}
+}
+  .half .category-copy, .two-third .category-copy, .third .category-copy, .single .category-copy, .full .category-copy{
+ 
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    grid-area: Category-Content;
+    margin-right: 0rem;
+    margin-left: 1.5rem;
+    padding-left: 4%;
+    font-size: 1.1rem !important;
+    color: #4e6e60;
+    font-family: "Bourton",sans-serif;
+}
+.category-headline .alt-font {
+    margin-left: 0rem;
+    font-size: 1.5rem;
+}
+
+</style>
+<script>
+
+setInterval(() => {
+    var $model_plans = document.querySelector("#main-content > section.sct-category-cards")
+    var $cat_card = $($model_plans).find('div.category-card')
+    var $images = $($model_plans).find('div.category-image')
+    var $texts = $($model_plans).find('div.category-copy')
+    var $heads = $($model_plans).find('h2.category-headline')
+    
+    $($images).each(function (i, $image) {
+        if(($image.children.length)<=2){
+        var new_div = document.createElement('div');
+        $heads[i].appendChild($texts[i]);
+        new_div.appendChild($heads[i]);
+        $image.appendChild(new_div);
+        }
+        /* $cat_card[i].classList.add('modified_og') */
+        /* var parentNode = $image.parentNode; */
+        $image.style.display = 'flex';
+        $texts[i].style.display = 'block';
+        $heads[i].style.textAlign = 'right !important';
+        $texts[i].style.textAlign = 'right !important';
+        $image.style.textAlign = 'left !important';
+        
+    });
+    
+    var headline = $('.category-headline a');
+    var image = $('.category-image');
+    var description = $('.category-copy');
+    $(headline).each(function (i, head) {
+        var location = head.href;
+        image[i].onclick = function(){
+            window.location.href = location;
+        }
+        description[i].onclick = function(){
+            window.location.href = location;
+        }
+
+        if($heads[i].children[0].innerText=="Sandwiches "){
+            $images[i].children[0].src = "https://www.mcalistersdeli.com/-/media/mcalisters/menu/landing/Sandwiches%20Images%20Resized";
+            $cat_card[i].children[1].classList.add("og_format")
+        }
+    });
+
+
+
+    }, 200);  
+</script>
+
+

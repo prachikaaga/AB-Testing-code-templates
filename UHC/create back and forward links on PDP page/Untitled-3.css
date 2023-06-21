@@ -1,0 +1,658 @@
+<style>
+    .u-m-t {
+        margin-top: 0.5rem !important;
+    }
+    .tt_img3 {
+        width: 300px;
+        height: 50px !important;
+        /* padding-right: 5%; */
+    }
+    .c-collapse:after {
+        content: "";
+        /* position: absolute; */
+        -webkit-transition: -webkit-transform 150ms ease-in-out;
+        transition: -webkit-transform 150ms ease-in-out;
+        -o-transition: transform 150ms ease-in-out;
+        transition: transform 150ms ease-in-out;
+        transition: transform 150ms ease-in-out,-webkit-transform 150ms ease-in-out;
+        background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZD0iTTEuOSAzLjFMOCA5LjJsNi4xLTYuMUwxNiA0LjlsLTggOC04LTggMS45LTEuOHoiIGZpbGw9IiMzMzMiLz48L3N2Zz4=) center center no-repeat;
+        height: 1rem;
+        right: 1rem;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        width: 1rem;
+    }
+
+    .c-collapse {
+        background-color: transparent;
+        position: relative;
+        z-index: 1;
+        /* border-top: 1px solid #333; */
+        /* border-bottom: 1px solid #333; */
+    }
+
+    .c-collapse {
+        -webkit-transition: background 150ms ease-in-out;
+        -o-transition: background 150ms ease-in-out;
+        transition: background 150ms ease-in-out;
+        font-weight: 500;
+        font-size: 18px;
+        font-size: 1.0rem;
+        line-height: 1.5;
+        background: #fbfbfb;
+        color: #002677;
+        /* display: block; */
+        min-height: 2.625rem;
+        /* padding-left: 0.25rem;
+        padding-right: 0.25rem; */
+        /* padding: 1rem 3rem 1rem 1.5rem; */
+        position: relative;
+    }
+
+    .ttGrid h2.unity-type-h6 {
+        display: inline-block;
+        width: 60%;
+    }
+    .ttGrid .c-plan-results-card__title-link {
+        color: #002677;
+        font-size: 1.5rem;
+    }
+    .ttGrid .c-plan-results-card__logo {
+        height: 4rem;
+        border-left: 1px solid #DADBDC;
+        margin-left: 30px;
+        padding-left: 30px;
+        margin-top: -10px;
+    }
+    .ttGrid p.unity-type-small {
+        margin-top: -15px;
+    }
+    .ttPrimary.ttMt,
+    .ttRight .c-button.c-button--orange {
+        margin-top: 20px;
+    }
+    .ttRight .c-button.c-button--orange {
+        margin-left: 20px;
+    }
+    .ttRight .c-button.c-button--naked {
+        padding-left: 0;
+        margin-top: 10px;
+        padding-bottom: 0;
+        font-weight: 600;
+        justify-content: left;
+        /* width: 100%; */
+    }
+    .ttLeft {
+        margin-top: 0;
+        flex: 0 0 60%;
+        max-width: 60%;
+        padding-right: 24px;
+        padding-top: 8px;
+    }
+    .ttRight {
+        margin-top: 0;
+        flex: 0 0 40%;
+        max-width: 40%;
+        padding-left: 0;
+        padding-top: 8px;
+    }
+    .ttList .c-tempo-icon.c-tempo-icon--md {
+        width: 3em;
+        height: 3em;
+    }
+    .ttList .o-list-bare__item {
+        margin-bottom: 0;
+        width: 95%;
+    }
+    .ttFillBlue {
+        fill: #002677 !important;
+    }
+    .ttPhone {
+        margin: 0 auto;
+    }
+    .ttPhone b {
+        margin-left: 10px;
+    }
+    span.ttAmt.u-color-blue,
+    span.ttDollar,
+    .ttRight sup {
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+    .ttRight sup {
+        top: unset;
+    }
+    .ttRight .unity-type-normal {
+        margin-bottom: 0;
+        font-size: 16px;
+    }
+    .ttDivider {
+        border-top: 1px solid #DADBDC;
+        height: 18px;
+        flex: 0 0 100%;
+        margin-top: 10px;
+    }
+    .modalCounty {
+        display: none;
+        position: fixed;
+        z-index: 6;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background: rgba(96, 104, 111, 0.7);
+    }
+    .modal-content {
+        position: absolute;
+        width: 600px;
+        height: auto;
+        background-color: #fefefe;
+        top: 25%;
+        left: 20%;
+        z-index: 6;
+        padding: 30px;
+        border-radius: 10px;
+    }
+    .modal-content h2 {
+        font-size: 1.5rem;
+        color: #002677;
+    }
+    .ttClose {
+        color: #003DA5;
+        font-size: 1.3rem;
+        position: absolute;
+        right: 36px;
+        top: 30px;
+        cursor: pointer;
+    }
+    a.ttMyCounty {
+        display: block;
+        cursor: pointer;
+        text-decoration: none;
+        margin-top: 10px;
+    }
+    .ttPhone span:last-of-type {
+        margin-left: 5px;
+    }
+
+
+    @media only screen 
+        and (max-width: 1230px) {
+        .ttPrimary,
+        .ttRight .c-button.c-button--orange,
+        .ttRight .c-button.c-button--naked {
+            width: 100%
+        }
+        a.c-button.c-button--secondary.ttPrimary.ttMt {
+            margin-top: 0px;
+        }
+        .ttRight .c-button.c-button--orange {
+            margin-left: 0;
+        }
+    }
+    @media only screen 
+        and (max-width: 1024px) {
+        .ttGrid p.unity-type-small {
+            margin-top: 0;
+        }
+        .ttGrid .c-plan-results-card__logo {
+            border-left: none;
+            margin-left: 0;
+            padding-left: 0;
+            margin-top: 0;
+            display: block;
+        }
+        .ttRight .c-button.c-button--orange {
+            margin-left: 0;
+        }
+    }
+    @media only screen 
+        and (max-width: 568px) {
+        a.ttMyCounty {
+            text-align: left;
+            margin-bottom: 5px;
+        }
+        .modal-content {
+            left: 0 !important;
+            width: 100%;
+        }
+        .ttLeft,
+        .ttRight {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        .ttGrid h2.unity-type-h6 {
+            width: 100%;
+        }
+    }
+</style>
+<script>
+
+console.log('** Simple Plan C **');
+createModal();
+
+window.Flickerlessly=window.Flickerlessly||{},function(t){"use strict";var i=function(t,n,a,o){var i="atNodeInserted"+t,r=[],e=["","-moz-","-webkit-","-ms-","-o-"];e.forEach(function(t,e){r.push("@"+t+"keyframes "+i+" {from {opacity:0.99} to {opacity:1}}")}),r.push(n+"{"),e.forEach(function(t,e){r.push(t+"animation-duration:0.001s;"+t+"animation-name:"+i+";")}),r.push("}");var s=document.getElementsByTagName("head")[0];if(s){var c=document.createElement("style");c.setAttribute("type","text/css"),c.styleSheet?c.styleSheet.cssText=r.join("\n"):c.appendChild(document.createTextNode(r.join("\n"))),s.insertBefore(c,s.firstChild)}var l=function(t){if(t.animationName===i&&"object"==typeof t.target){var e=!0===o||!1===o&&null===t.target.getAttribute("data-flk-success");u("('"+n+"') ready! Execute: "+e,t.target),"function"==typeof a&&e?(t.target.setAttribute("data-flk-success",i),a(t.target,u)):u("Won't Callback",e,a)}};["animationstart","MSAnimationStart","webkitAnimationStart"].forEach(function(t,e){document.addEventListener(t,l,!1)})},u=function(){Array.prototype.unshift.call(arguments,"FLK:"),console.info.apply(this,arguments)},r=Math.floor(1e3*Math.random()+1);t.onReady=function(){for(var t=0;t<arguments.length;t++){var e=arguments[t],n=e.selector,a=e.success||null,o=e.persist||!1;i(r++,n,a,o)}}}(Flickerlessly);
+
+Flickerlessly.onReady(
+    {selector: '#js-results-container',
+    success: function(el, log){
+        // first check to see if there is a county dropdown
+        var dd = document.querySelector('.c-select_segmented-select');
+        if (!dd || dd.length===0) {
+            console.log('** processing the cards');
+			var tt_con=document.querySelector('meta[name=state]').content;
+			if(tt_con==null||tt_con==undefined)
+			{
+				tt_con='';
+			}
+			console.log("Test country is "+tt_con);
+			 try{
+          var cradsFn=function(){
+		    var cards = el.querySelectorAll('.c-plan-results-card');
+			if(cards.length>0){
+					clearInterval(myInterval1);
+			console.log("Test cards length is "+ cards.length);
+            cards.forEach(card => {
+               processCard(card,tt_con)
+            });
+			}
+		  }
+		  myInterval1 = setInterval(cradsFn, 1000);
+			 }
+             catch(e)
+			 {
+			 }				 
+            // fire the trackEvents here
+            _satellite.track('targetComplete');
+            _satellite.setVar('TargetActivity','2132 Simplified v2');
+        }
+    }}
+);
+processCard = (card,tt_con) => {
+	try{
+    var items = card.querySelectorAll('.o-grid__item');
+    var left = items[0];
+    var right = items[1];
+
+    // this removes the third grid that seems to only show in mobile
+    if (items[2]) items[2].remove();
+    left.classList.add('ttLeft');
+    right.classList.add('ttRight');
+    // create the header area
+    var newGrid = document.createElement('div');
+    newGrid.setAttribute('class', 'o-grid__item o-grid__item-12 o-grid__item-12@md ttGrid');
+    var plan = left.querySelector('h2.unity-type-h6');
+	//$(plan).addClass('ttLeft');
+	//$(plan).css('max-width',"50%");
+	//$(plan).css('margin','auto');
+     // $(plan).css('float','left');
+    newGrid.appendChild(plan);
+    var logo = left.querySelector('.c-plan-results-card__logo');
+    if (logo) newGrid.appendChild(logo);
+    var id = left.querySelector('p.unity-type-small');
+	//if(id) $(id).addClass('ttRight');
+    if (id) newGrid.appendChild(id);
+    insertBefore(newGrid, left);
+    // do the right side stuff
+    right.querySelector('h3.unity-type-h6').remove();
+    right.querySelector('a').remove();
+    var lis = right.querySelectorAll('.c-plan-results-card__benefits .o-list-bare li');
+    right.querySelector('.c-plan-results-card__benefits').remove();
+    var premium = left.querySelector('h2.unity-type-normal');
+    if (premium) {
+        right.appendChild(premium);
+        premium.classList.remove('u-color-blue');
+        var amt = premium.querySelector('span');
+        amt.classList.add('ttAmt');
+        amt.classList.add('u-color-blue');
+        var ast = premium.querySelector('sup');
+        premium.querySelector('span').remove();
+        premium.querySelector('sup').remove();
+        var dol = document.createElement('span');
+        dol.classList.add('ttDollar');
+        dol.classList.add('u-color-blue');
+        dol.innerText = "$";
+        right.appendChild(dol);
+        right.appendChild(amt);
+        right.appendChild(ast);
+        premium.innerText = "Monthly Premium:";
+    }
+    var desc = left.querySelector('div.unity-type-small');
+    if (desc) right.appendChild(desc);
+    var details = left.querySelector('a.c-button.c-button--secondary');
+    if (details) {
+        details.classList.add('ttPrimary');
+        details.innerText = 'Plan Details';
+        right.appendChild(details);
+    }
+    var eip = left.querySelector('.c-button.c-button--orange');
+    if (eip) {
+        right.appendChild(eip);
+        details.classList.add('ttMt');
+    }
+    var ce = left.querySelector('.c-button.c-button--naked');
+    if (ce) {
+        right.appendChild(ce);
+        ce.style.borderRadius = '0px';
+    }
+    // add the county stuff if it is available
+    var counties = left.querySelector('.js-available-counties');
+
+    // Prachika Agarwal modification to correct the functionality of county link button
+    if(counties) {
+        right.appendChild(counties);
+        counties.children[0].classList.remove('c-collapse');
+        counties.children[0].textContent = 'Is this plan available in my country ?';
+    }
+    // if (counties) {
+    //     var countyLink = constructLink(counties);
+    //     right.appendChild(countyLink);
+    //     counties.remove();
+    // }
+    var phone = document.createElement('div');
+    phone.setAttribute('class', 'ttPhone');
+	var desc = document.createElement('span');
+	if(tt_con!='co')
+	{
+    desc.innerText = "8:00 am to 8:00 pm local time, 7 days a week";
+	}
+	else{
+      desc.innerHTML=card.querySelector('.u-m-t.u-b-t.u-b-gray-medium.u-p-t').innerHTML;
+		//desc.appendChild(card.querySelector('.u-m-t.u-b-t.u-b-gray-medium.u-p-t').innerHTML);
+		desc.classList.add('tt_b');
+	}
+    var tfnBlock = card.querySelector('.u-m-t.u-b-t.u-b-gray-medium.u-p-t');
+	if(tt_con!='co')
+	{
+    var tfn = tfnBlock.querySelector('span.c-tfn');
+    if (!tfn) var tfn = tfnBlock.querySelector('p a');
+    phone.appendChild(tfn);
+	}
+	
+    var b = document.createElement('b');
+	if(tt_con!='co')
+	{
+    b.innerText = "TTY 711";
+	}
+	else
+		 b.innerText = "";
+    phone.appendChild(b);
+    phone.appendChild(desc);
+    tfnBlock.remove();
+    insertAfter(phone, right);
+    var divider = document.createElement('div');
+    divider.classList.add('ttDivider');
+    insertAfter(divider, right);
+    // do the left side stuff
+    var hr = left.querySelector('hr');
+    if (hr) hr.remove();
+    var ps = left.querySelectorAll('p');
+    if (ps[0]) ps[0].remove();
+    if (ps[1]) ps[1].remove();
+    if (ps[2]) ps[2].remove();
+    if (ps[3]) ps[3].remove();
+    var lp = left.querySelector('.o-list-pack');
+    if (lp) lp.remove();
+    // add the new stuff
+    var ul = document.createElement('ul');
+    ul.setAttribute('class', 'o-list-bare ttList');
+    ul.appendChild(lis[0]);
+    ul.appendChild(lis[1]);
+    ul.appendChild(lis[2]);
+    lis.forEach(li => {
+        li.querySelector('h4').classList.remove('u-color-blue')
+    })
+    //ul.appendChild(addListItem('Prescription drug coverage', '$0 drug copays on all tiers of covered medications with option for home delivery', 'drug'));
+    //ul.appendChild(addListItem('OTC items - debit and food allowances', 'Up to $1,200 per year to buy OTC products, plus $360 per year for healthy foods', 'otc'));
+    //ul.appendChild(addListItem('Vision', '$0 copay for 1 routine eye exam and $200 allowance for eyewear', 'vision'));
+    left.appendChild(ul);
+      //code to remove icon in orange button
+      $('.ttRight > a.c-button.c-button--orange > span.o-svg-icon--lg').remove();
+	}
+	catch(e)
+	{
+		console.log("error in cards "+ e.message);
+	}
+
+}
+
+// Prachika Agarwal - commenting out the link as it's not working
+
+// constructLink = (countiesLink) => {
+//     var counties = countiesLink.querySelector('.js-available-counties__list');
+//     var countyLink = document.createElement('a');
+//     countyLink.classList.add('ttMyCounty');
+//     countyLink.innerText = "Is this plan available in my county?";
+//     if (location.href.indexOf('.com/la')!=-1) countyLink.innerText = "Is this plan available in my parish?";
+//     countyLink.setAttribute('data-event-name', "Is-this-plan-available-in-my-county");
+//     countyLink.setAttribute('data-event-type', 'plan');
+//     countyLink.setAttribute('href', '#');
+//     countyLink.addEventListener('click', function() {
+//         var spot = document.querySelector('.modal-content .ttCountyList');
+//         spot.innerHTML = "";
+//         spot.appendChild(counties);
+//         showPopup();
+//     });
+//     return countyLink;
+// }
+addListItem = (header, text, type) => {
+    var li = document.createElement('li');
+    li.setAttribute('class', 'o-list-bare__item u-d-flex u-f-align-center');
+    var div = document.createElement('div');
+    div.setAttribute('class', 'c-plan-results-card__benefit-icon');
+    var tempo = document.createElement('div');
+    tempo.setAttribute('class', 'c-tempo-icon c-tempo-icon--2c c-tempo-icon--2c-blue c-tempo-icon--md');
+    if (type==='drug') var svg = drug();
+    if (type==='otc') var svg = otc();
+    if (type==='vision') var svg = vision();
+    tempo.appendChild(svg);
+    div.appendChild(tempo);
+    li.appendChild(div);
+    var desc = document.createElement('div');
+    var h4 = document.createElement('h4');
+    h4.setAttribute('class', 'unity-type-normal u-color-blue u-text-bold u-m-b-0');
+    h4.innerText = header;
+    var p = document.createElement('p');
+    p.innerText = text;
+    desc.appendChild(h4);
+    desc.appendChild(p);
+    li.appendChild(desc);
+    return li;
+}
+drug = () => {
+    let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    var title = document.createElement('title');
+    title.setAttribute('id', 'tempo-icon-pill-bottle--title');
+    title.innerText = 'Pill Bottle Icon';
+    svg.appendChild(title);
+    let path1 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path1.setAttribute('class', 'c-tempo-icon__base c-tempo-icon__accent');
+    path1.setAttribute('fill', 'currentColor');
+    path1.setAttribute('d', 'M32,5H16c-0.55,0-1,0.45-1,1v6h18V6C33,5.45,32.55,5,32,5z');
+    svg.appendChild(path1);
+    let path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path2.setAttribute('class', 'c-tempo-icon__2c-only');
+    path2.setAttribute('fill', '#ffffff');
+    path2.setAttribute('d', 'M17.906,17.844 L30.094,17.844 L30.094,34.156 L17.906,34.156 L17.906,17.844 z');
+    svg.appendChild(path2);
+    let path3 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path3.setAttribute('class', 'c-tempo-icon__2c-only');
+    path3.setAttribute('fill', '#002677');
+    path3.setAttribute('d', 'M21.34,25.2 L22.7,25.2 L24.56,27.83 L22.73,30.48 L24.29,30.48 L25.34,28.95 L26.4,30.48 L27.99,30.48 L26.13,27.8 L27.78,25.46 L26.24,25.46 L25.41,26.79 L24.05,24.87 C24.1,24.85 24.14,24.82 24.18,24.8 C24.65,24.53 24.98,24.07 25.06,23.53 C25.08,23.37 25.08,23.21 25.07,23.05 C25.02,22.59 24.81,22.16 24.43,21.88 C24.39,21.85 24.34,21.82 24.3,21.79 C23.96,21.59 23.61,21.52 22.96,21.52 L20.03,21.52 L20.03,27.59 L21.35,27.59 L21.35,25.2 z M21.34,22.56 L22.66,22.56 C23.43,22.56 23.78,22.81 23.78,23.39 C23.78,23.68 23.67,23.91 23.46,24.05 C23.29,24.18 23.04,24.22 22.6,24.22 L21.34,24.22 L21.34,22.56 z');
+    svg.appendChild(path3);
+    let path4 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path4.setAttribute('class', 'c-tempo-icon__base ttFillBlue');
+    path4.setAttribute('fill', '#002677');
+    path4.setAttribute('d', 'M16,12v28c0,0.14,0.01,0.27,0.04,0.4c0.13,0.65,0.58,1.19,1.18,1.44C17.46,41.94,17.72,42,18,42h12 c0.28,0,0.54-0.06,0.78-0.16c0.6-0.25,1.05-0.79,1.18-1.44C31.99,40.27,32,40.14,32,40V12H16z M30,34H18V18h12V34z');
+    svg.appendChild(path4);
+    return svg;
+}
+otc = () => {
+    let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    var title = document.createElement('title');
+    title.setAttribute('id', 'tempo-icon-bank-card--title');
+    title.innerText = 'Bank Card Icon';
+    svg.appendChild(title);
+    let path1 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path1.setAttribute('class', 'c-tempo-icon__base ttFillBlue');
+    path1.setAttribute('fill', 'currentColor');
+    path1.setAttribute('d', 'M38,13 C39.1,13 40,13.9 40,15 L40,33 C40,34.1 39.1,35 38,35 L10,35 C8.9,35 8,34.1 8,33 L8,15 C8,13.9 8.9,13 10,13 L38,13 z M37.15,28 L21,28 L21,30 L36,30 L37.15,28 z M18,23 L11,23 L11,30 L18,30 L18,23 z M37.15,23 L21,23 L21,25 L36,25 L37.15,23 z M38,16 L10,16 L10,19.38 L38,19.38 L38,16 z');
+    svg.appendChild(path1);
+    let path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path2.setAttribute('class', 'c-tempo-icon__2c-only c-tempo-icon__always-white');
+    path2.setAttribute('fill', 'currentColor');
+    path2.setAttribute('d', 'M10,16 L38,16 L38,19.38 L10,19.38 z');
+    svg.appendChild(path2);
+    let path3 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path3.setAttribute('class', 'c-tempo-icon__accent c-tempo-icon__2c-only c-tempo-icon__base-swap-accent');
+    path3.setAttribute('fill', 'currentColor');
+    path3.setAttribute('d', 'M11,23 L18,23 L18,30 L11,30 z M21,28 L37.15,28 L36,30 L21,30 z M36,25 L21,25 L21,23 L37.15,23 z');
+    svg.appendChild(path3);
+    return svg;
+}
+vision = () => {
+    let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    var title = document.createElement('title');
+    title.setAttribute('id', 'tempo-icon-eye-exam--title');
+    title.innerText = 'Eye Exam Icon';
+    svg.appendChild(title);
+    let path1 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path1.setAttribute('class', 'c-tempo-icon__accent');
+    path1.setAttribute('fill', 'currentColor');
+    path1.setAttribute('d', 'M24,44 C25.66,44 27,42.66 27,41 L21,41 C21,42.66 22.34,44 24,44 z');
+    svg.appendChild(path1);
+    let path2 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path2.setAttribute('class', 'c-tempo-icon__always-white c-tempo-icon__2c-blue-only');
+    path2.setAttribute('fill', 'currentColor');
+    path2.setAttribute('d', 'M36,7 L12,7 C10.9,7 10,7.9 10,9 C10,10.1 10.9,11 12,11 L36,11 C37.1,11 38,10.1 38,9 C38,7.9 37.1,7 36,7 z');
+    svg.appendChild(path2);
+    let path3 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path3.setAttribute('class', 'c-tempo-icon__accent');
+    path3.setAttribute('fill', 'currentColor');
+    path3.setAttribute('d', 'M36,7 L12,7 C10.9,7 10,7.9 10,9 C10,10.1 10.9,11 12,11 L36,11 C37.1,11 38,10.1 38,9 C38,7.9 37.1,7 36,7 z');
+    svg.appendChild(path3);
+    let path4 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path4.setAttribute('class', 'c-tempo-icon__base ttFillBlue');
+    path4.setAttribute('fill', 'currentColor');
+    path4.setAttribute('d', 'M34,11 L34,39 L14,39 L14,11 L12,11 L12,41 L36,41 L36,11 z');
+    svg.appendChild(path4);
+    let path5 = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path5.setAttribute('class', 'c-tempo-icon__base c-tempo-icon__accent-swap-blue');
+    path5.setAttribute('fill', 'currentColor');
+    path5.setAttribute('d', 'M27.07,19.7 L23.13,19.7 L23.13,17.93 L26.68,17.93 L26.68,16.68 L23.13,16.68 L23.13,15.12 L26.99,15.12 L26.99,13.78 L21.56,13.78 L21.56,21.04 L27.07,21.04 z M19.88,28.75 L18.75,28.75 L18.75,23.56 L22.4,23.56 L22.4,24.52 L19.88,24.52 L19.88,25.72 L22.08,25.72 L22.08,26.62 L19.88,26.62 z M27.06,24.52 L27.06,25.98 L28.07,25.98 C28.39,25.98 28.59,25.94 28.72,25.82 C28.88,25.7 28.97,25.49 28.97,25.24 C28.97,24.99 28.87,24.78 28.68,24.66 C28.54,24.56 28.34,24.52 28.01,24.52 L27.06,24.52 z M25.93,28.75 L25.93,23.56 L28.02,23.56 C28.72,23.56 29.07,23.64 29.4,23.86 C29.85,24.16 30.08,24.63 30.08,25.23 C30.08,25.76 29.89,26.2 29.52,26.51 C29.2,26.77 28.82,26.88 28.23,26.88 L27.06,26.88 L27.06,28.75 L25.93,28.75 z M18.12,31.92 L16.98,31.92 L16.98,31.22 L20.1,31.22 L20.1,31.92 L18.95,31.92 L18.95,35.02 L18.12,35.02 z M24.95,33.11 C24.95,32.33 24.55,31.82 23.93,31.82 C23.28,31.82 22.88,32.32 22.88,33.12 C22.88,33.92 23.28,34.42 23.93,34.42 C24.56,34.42 24.95,33.92 24.95,33.11 z M22.05,33.12 C22.05,31.92 22.79,31.13 23.95,31.13 C25.04,31.13 25.79,31.94 25.79,33.12 C25.79,34.31 25.04,35.11 23.93,35.11 C22.8,35.11 22.05,34.31 22.05,33.12 z M30.91,31.85 L29.21,33.87 C29.14,33.96 29.14,33.96 28.79,34.33 C29.17,34.32 29.34,34.31 29.55,34.31 L30.97,34.31 L30.97,35.01 L27.76,35.01 L27.76,34.35 L29.51,32.26 C29.59,32.18 29.65,32.11 29.86,31.9 C29.54,31.91 29.39,31.92 29.17,31.92 L27.91,31.92 L27.91,31.22 L30.91,31.22 L30.91,31.85 z');
+    svg.appendChild(path5);
+    return svg;
+}
+function createModal() {
+  try{
+    var myModalCounty = document.createElement('div');
+    myModalCounty.setAttribute('id', 'myModalCounty');
+    myModalCounty.setAttribute('class', 'modalCounty');
+    myModalCounty.setAttribute('tabindex', -1);
+    var mc = document.createElement('div');
+    mc.setAttribute('class', 'modal-content');
+    var close = document.createElement('div');
+    close.setAttribute('class', 'ttClose');
+    close.setAttribute('tabindex', 0);
+    close.setAttribute('aria-label', 'Close');
+    close.setAttribute('role', 'button');
+    close.innerText = 'X';
+    close.addEventListener('keypress', function() {
+        closeUp(event, this)
+        var myCounty = document.querySelector('.ttMyCounty');
+        myCounty.focus();
+    });
+    close.addEventListener('click', function(e) {
+        e.preventDefault();
+        closePopup();
+        var myCounty = document.querySelector('.ttMyCounty');
+        myCounty.focus();
+    });
+
+    var h2 = document.createElement('h2');
+    h2.appendChild(document.createTextNode('This plan is available in the following counties:'));
+    var p = document.createElement('p');
+    p.setAttribute('class', 'ttCountyList');
+    mc.appendChild(h2);
+    mc.appendChild(close);
+    mc.appendChild(p);
+
+    var cancel = document.createElement('button');
+    cancel.setAttribute('class', 'c-button c-button--primary ttCancel')
+    cancel.appendChild(document.createTextNode('Close'));
+    cancel.addEventListener('click', function(e) {
+        e.preventDefault();
+        closePopup();
+        var myCounty = document.querySelector('.ttMyCounty');
+        myCounty.focus();
+    });
+    mc.appendChild(cancel);
+    myModalCounty.appendChild(mc);
+    var body = document.querySelector('body');
+    body.appendChild(myModalCounty);
+
+    // add all the elements inside modal which you want to make focusable
+    const  focusableElements = 'input, select, button, .ttClose32';
+    const modal = document.querySelector('#myModalCounty');
+    const firstFocusableElement = modal.querySelectorAll(focusableElements)[0];
+    const focusableContent = modal.querySelectorAll(focusableElements);
+    const lastFocusableElement = focusableContent[focusableContent.length - 1];
+    const lastLessOne = focusableContent[focusableContent.length - 2];
+    document.addEventListener('keydown', function(e) {
+        let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+        if (!isTabPressed) {
+            return;
+        }
+        if (e.shiftKey) {
+            if (document.activeElement === firstFocusableElement) {
+                var lastVisible = (isVisible(lastFocusableElement)) ? lastFocusableElement : lastLessOne;
+                lastVisible.focus();
+                e.preventDefault();
+            }
+        } else {
+            var lastVisible = (isVisible(lastFocusableElement)) ? lastFocusableElement : lastLessOne;
+            if (document.activeElement === lastVisible) {
+                firstFocusableElement.focus();
+                e.preventDefault();
+            }
+        }
+    });
+  }
+catch(e)
+{
+	console.log("target activity create model function error  - "+e.message);
+}
+}
+showPopup = () => {
+    var mod = document.getElementById("myModalCounty");
+    var mc = mod.querySelector('.modal-content');
+    mc.style.left = window.innerWidth/2 - 300+"px";
+    mod.style.display = "block";
+    mod.focus();
+}
+closePopup = () => {
+    document.getElementById("myModalCounty").style.display = "none";
+}
+closeUp = (event, el) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        closePopup();
+    }
+}
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closePopup();
+    }
+});
+function isVisible(e) {
+    return !!( e.offsetWidth || e.offsetHeight || e.getClientRects().length );
+}
+insertBefore = (el, referenceNode) => {
+    referenceNode.parentNode.insertBefore(el, referenceNode);
+}
+insertAfter = (el, referenceNode) => {
+    referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
+}
+</script>

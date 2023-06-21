@@ -1,0 +1,42 @@
+.c-collapse:after {
+    content: "";
+    /* position: absolute; */
+    -webkit-transition: -webkit-transform 150ms ease-in-out;
+    transition: -webkit-transform 150ms ease-in-out;
+    -o-transition: transform 150ms ease-in-out;
+    transition: transform 150ms ease-in-out;
+    transition: transform 150ms ease-in-out,-webkit-transform 150ms ease-in-out;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZD0iTTEuOSAzLjFMOCA5LjJsNi4xLTYuMUwxNiA0LjlsLTggOC04LTggMS45LTEuOHoiIGZpbGw9IiMzMzMiLz48L3N2Zz4=) center center no-repeat;
+    height: 1rem;
+    right: 1rem;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 1rem;
+}
+
+.c-collapse {
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+    /* border-top: 1px solid #333; */
+    /* border-bottom: 1px solid #333; */
+}
+
+.c-collapse {
+    -webkit-transition: background 150ms ease-in-out;
+    -o-transition: background 150ms ease-in-out;
+    transition: background 150ms ease-in-out;
+    font-weight: 500;
+    font-size: 18px;
+    font-size: 1.0rem;
+    line-height: 1.5;
+    background: #fbfbfb;
+    color: #002677;
+    /* display: block; */
+    min-height: 2.625rem;
+    /* padding-left: 0.25rem;
+    padding-right: 0.25rem; */
+    /* padding: 1rem 3rem 1rem 1.5rem; */
+    position: relative;
+}
